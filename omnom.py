@@ -231,5 +231,4 @@ def legs(a):
 
 main(50)
 
-t.end_fill()
 t.getscreen().mainloop()
