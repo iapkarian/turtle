@@ -5,9 +5,10 @@ t = turtle.Turtle()
 
 
 def main(a):
-    t.speed(20)
+    t.speed(5)
     t.color('black')
     t.pensize(2)
+    body(a)
     eyes(a)
     head(a)
     mouth(a)
@@ -15,12 +16,20 @@ def main(a):
 
 
 def eyes(a):
+    t.home()
+
+    t.begin_fill()
+    t.fillcolor('white')
+
     t.right(90)
     t.circle(a)
     t.penup()
     t.goto(-a*2, 0)
     t.pendown()
     t.circle(a)
+
+    t.end_fill()
+
     t.penup()
 
     t.home()
@@ -156,9 +165,69 @@ def middle_tooth(a):
     t.end_fill()
 
 
-def body():
-    t.pensize(4)
-    t.color('red')
+def body(a):
+    t.penup()
+    t.begin_fill()
+    t.fillcolor('green')
+    # t.pensize(4)
+    # t.color('red')
+
+    t.home()
+    t.right(90)
+    t.circle(-a, 200)
+    t.left(150)
+    t.forward(a)
+    t.left(75)
+    t.circle(a * 3, 5)
+    t.right(50)
+    t.circle(a * 3, 15)
+    t.circle(a / 7, 50)
+    t.pendown()
+
+    t.right(60)
+    t.circle(a * 3, 20)
+    t.right(180)
+    t.circle(-a * 3, 5)
+    t.left(100)
+    t.forward(30)
+    t.circle(a/7, 75)
+    t.forward(20)
+    t.circle(a / 7, 75)
+    t.circle(a * 4, 20)
+
+    t.left(90)
+    legs(a)
+    t.left(80)
+    t.circle(a * 7, 20)
+    t.left(80)
+    legs(a)
+
+    t.left(95)
+    t.circle(a * 4, 20)
+    t.circle(a / 7, 75)
+    t.forward(20)
+    t.circle(a / 7, 75)
+    t.forward(30)
+    t.left(100)
+    t.circle(-a * 3, 5)
+    t.right(180)
+
+    t.circle(a * 3, 20)
+    t.right(60)
+
+    t.end_fill()
+
+
+def legs(a):
+    t.forward(15)
+    t.left(180)
+    t.forward(30)
+    t.circle(a / 7, 90)
+    t.forward(30)
+    t.circle(a / 7, 90)
+    t.forward(30)
+    t.left(180)
+    t.forward(15)
 
 main(50)
 
